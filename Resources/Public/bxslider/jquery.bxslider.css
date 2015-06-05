@@ -29,7 +29,7 @@
 /** THEME
 ===================================*/
 
-.bx-wrapper .bx-viewport {
+#DISABLED .bx-wrapper .bx-viewport {
 	-moz-box-shadow: 0 0 5px #ccc;
 	-webkit-box-shadow: 0 0 5px #ccc;
 	box-shadow: 0 0 5px #ccc;
@@ -201,4 +201,11 @@
 	display: block;
 	font-size: .85em;
 	padding: 10px;
+}
+
+
+.bxslider,
+.bxslider li {
+	margin: 0;
+	padding: 0;
 }

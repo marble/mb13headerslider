@@ -23,9 +23,11 @@ plugin.tx_mb13headerslider {
 		height = 256
 		# cat=plugin.tx_mb13headerslider/image/003; type=integer; label=Color of the background image that serves as stage
 		backColor = #f0f0f0
+		# cat=plugin.tx_mb13headerslider/image/004; type=string; label=Default image to be shown if none is given in the media field of the pages.
+		defaultHeaderPic = fileadmin/system/v4/img/defaultHeaderPic.jpg
 
 		# cat=plugin.tx_mb13headerslider/slider/001; type=integer; label=Milliseconds a slide is shown
-		bxsliderPause = 4000
+		bxsliderPause = 5000
 
 	}
 

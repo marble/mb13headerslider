@@ -6,7 +6,7 @@
 
 lib.tx_mb13headerslider = IMAGE
 lib.tx_mb13headerslider {
-	file = {$plugin.tx_mb13headerslider.settings.defaultImage}
+	file = {$plugin.tx_mb13headerslider.settings.defaultHeaderPic}
 	wrap (
 		<ul class="bxslider">
 			<li class="last"> | </li>
@@ -14,8 +14,8 @@ lib.tx_mb13headerslider {
 	)
 }
 
-lib.tx_mb13headerslider.stdWrap.override.cObject = FILES
-lib.tx_mb13headerslider.stdWrap.override.cObject {
+x.lib.tx_mb13headerslider.stdWrap.override.cObject = FILES
+x.lib.tx_mb13headerslider.stdWrap.override.cObject {
 	references {
 		table = pages
 		data = levelmedia:-1,slide
