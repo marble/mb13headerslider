@@ -1,0 +1,114 @@
+# compare with plugin.tx_t3sheaderslider!
+
+# to insert the result:
+#
+# =< lib.tx_mb13headerslider
+
+lib.tx_mb13headerslider = IMAGE
+lib.tx_mb13headerslider {
+	file = {$plugin.tx_mb13headerslider.settings.defaultImage}
+	wrap (
+		<ul class="bxslider">
+			<li class="last"> | </li>
+		</ul>
+	)
+}
+
+lib.tx_mb13headerslider.stdWrap.override.cObject = FILES
+lib.tx_mb13headerslider.stdWrap.override.cObject {
+	references {
+		table = pages
+		data = levelmedia:-1,slide
+	}
+
+	renderObj = COA
+	renderObj {
+		10 = LOAD_REGISTER
+		10.publicUrl.data = file:current:publicUrl
+		10.altText.data = file:current:alternative
+		10.titleText.data = file:current:title
+		10.fileNum.cObject = TEXT
+		10.fileNum.cObject {
+			current = 1
+			setCurrent = 1+
+			setCurrent.dataWrap = | {register:FILE_NUM_CURRENT}
+			prioriCalc = intval
+		}
+
+		20 = TEXT
+		20.dataWrap = Example: This is file {register:fileNum} of {register:FILES_COUNT} files.
+		20.if.isTrue = 0
+
+		30 = IMAGE
+		30 {
+			file = GIFBUILDER
+			file {
+				XY = {$plugin.tx_mb13headerslider.settings.width},{$plugin.tx_mb13headerslider.settings.height}
+				backColor = {$plugin.tx_mb13headerslider.settings.backColor}
+				10 = IMAGE
+				10 {
+					file {
+						import.data = register:publicUrl
+						width = {$plugin.tx_mb13headerslider.settings.width}c
+						# maxH = {$plugin.tx_mb13headerslider.settings.height}c
+					}
+				}
+			}
+			altText.data = register:altText
+			titleText.data = register:titleText
+			params.cObject = TEXT
+			params.cObject {
+				value = style="display:none"
+				value = style=""
+				if.value = 0
+				if.isGreaterThan.data = register:FILE_NUM_CURRENT
+			}
+		}
+		40 = RESTORE_REGISTER
+		wrap = <li class="first"> | </li> |*| <li class="middle"> | </li> |*| <li class="last"> | </li>        
+	}
+	stdWrap {
+		wrap = <ul class="bxslider"> | </ul>
+		required = 1
+	}
+}
+
+page.includeCSS {
+	mb13bxslider = EXT:mb13headerslider/Resources/Public/bxslider/jquery.bxslider.css
+	mb13bxslider.if.isTrue = {$plugin.tx_mb13headerslider.settings.includeJqueryBxsliderCss}
+}
+
+page.includeJSFooterlibs {
+	mb13jquery = //ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js
+	mb13jquery {
+		if.isTrue = {$plugin.tx_mb13headerslider.settings.includeJquery}
+		type = text/javascript
+		external = 1
+		forceOnTop = 1
+		disableCompression = 1
+		excludeFromConcatenation = 1
+	}
+	mb13bxslider = EXT:mb13headerslider/Resources/Public/bxslider/jquery.bxslider.js
+	mb13bxslider.if.isTrue = {$plugin.tx_mb13headerslider.settings.includeJqueryBxsliderJs}
+}
+
+page.jsFooterInline {
+
+	10.if.isTrue = {$plugin.tx_mb13headerslider.settings.includeInlineBxsliderJs}
+	10 = TEXT
+	10.value (
+		$(document).ready(function(){
+			$('.bxslider').bxSlider({
+				mode: 'fade',
+				adaptiveHeight: true,
+				touchEnabled: true,
+				captions: false,
+				pager: false,
+				controls: false,
+				auto: true,
+				pause: {$plugin.tx_mb13headerslider.settings.bxsliderPause},
+				});
+		});
+	)
+
+}

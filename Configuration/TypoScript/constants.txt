@@ -1,0 +1,32 @@
+plugin.tx_mb13headerslider {
+	view {
+		# # cat=plugin.tx_mb13headerslider/file; type=string; label=Path to template root (FE)
+		# templateRootPath = EXT:mb13headerslider/Resources/Private/Templates/
+		# # cat=plugin.tx_mb13headerslider/file; type=string; label=Path to template partials (FE)
+		# partialRootPath = EXT:mb13headerslider/Resources/Private/Partials/
+		# # cat=plugin.tx_mb13headerslider/file; type=string; label=Path to template layouts (FE)
+		# layoutRootPath = EXT:mb13headerslider/Resources/Private/Layouts/
+	}
+	settings {
+		 # cat=plugin.tx_mb13headerslider/enable/001; type=boolean; label=Load jQuery library v1.11.1 by Google CDN:jQuery 2.x has the same API as jQuery 1.x, but does not support Internet Explorer 6, 7, or 8.
+		includeJquery = 1
+		# cat=plugin.tx_mb13headerslider/enable/004; type=boolean; label=Include the predefined jquery.bxslider.css
+		includeJqueryBxsliderCss = 1
+		# cat=plugin.tx_mb13headerslider/enable/005; type=boolean; label=Include the predefined jquery.bxslider.js
+		includeJqueryBxsliderJs = 1
+		# cat=plugin.tx_mb13headerslider/enable/006; type=boolean; label=Include the predefined inline JS to activate '.boxslider'
+		includeInlineBxsliderJs = 1
+
+		# cat=plugin.tx_mb13headerslider/image/001; type=integer; label=Width of the background image that serves as stage
+		width = 766
+		# cat=plugin.tx_mb13headerslider/image/002; type=integer; label=Heigth of the background image that serves as stage 
+		height = 256
+		# cat=plugin.tx_mb13headerslider/image/003; type=integer; label=Color of the background image that serves as stage
+		backColor = #f0f0f0
+
+		# cat=plugin.tx_mb13headerslider/slider/001; type=integer; label=Milliseconds a slide is shown
+		bxsliderPause = 4000
+
+	}
+
+}
