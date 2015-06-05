@@ -7,6 +7,10 @@
 lib.tx_mb13headerslider = IMAGE
 lib.tx_mb13headerslider {
 	file = {$plugin.tx_mb13headerslider.settings.defaultHeaderPic}
+	file {
+		maxW = {$plugin.tx_mb13headerslider.settings.width}
+		maxH = {$plugin.tx_mb13headerslider.settings.height}
+	}
 	wrap (
 		<ul class="bxslider">
 			<li class="last"> | </li>
@@ -14,8 +18,8 @@ lib.tx_mb13headerslider {
 	)
 }
 
-x.lib.tx_mb13headerslider.stdWrap.override.cObject = FILES
-x.lib.tx_mb13headerslider.stdWrap.override.cObject {
+lib.tx_mb13headerslider.stdWrap.override.cObject = FILES
+lib.tx_mb13headerslider.stdWrap.override.cObject {
 	references {
 		table = pages
 		data = levelmedia:-1,slide
@@ -65,7 +69,7 @@ x.lib.tx_mb13headerslider.stdWrap.override.cObject {
 			}
 		}
 		40 = RESTORE_REGISTER
-		wrap = <li class="first"> | </li> |*| <li class="middle"> | </li> |*| <li class="last"> | </li>        
+		wrap = <li class="first"> | </li> |*| <li class="middle"> | </li> |*| <li class="last"> | </li>
 	}
 	stdWrap {
 		wrap = <ul class="bxslider"> | </ul>
