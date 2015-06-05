@@ -13,5 +13,9 @@ What does it do?
 
 - Implements a slider for header images
 - Images are taken from the media field of the pages
+- No PHP, only TypoScript.
 - Uses http://bxslider.com/
+
+
+End of README.rst
 
