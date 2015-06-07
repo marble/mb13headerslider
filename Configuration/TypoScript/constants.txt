@@ -27,7 +27,9 @@ plugin.tx_mb13headerslider {
 		defaultHeaderPic = fileadmin/v4/img/defaultHeaderPic.jpg
 
 		# cat=plugin.tx_mb13headerslider/slider/001; type=integer; label=Milliseconds a slide is shown
-		bxsliderPause = 5000
+		bxsliderPause = 7000
+		# cat=plugin.tx_mb13headerslider/slider/002; type=integer; label=Milliseconds of transition
+		bxsliderSpeed = 1000
 
 	}
 

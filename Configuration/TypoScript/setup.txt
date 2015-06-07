@@ -104,13 +104,14 @@ page.jsFooterInline {
 		$(document).ready(function(){
 			$('.bxslider').bxSlider({
 				mode: 'fade',
-				adaptiveHeight: true,
-				touchEnabled: true,
+				adaptiveHeight: false,
+				touchEnabled: false,
 				captions: false,
 				pager: false,
 				controls: false,
 				auto: true,
 				pause: {$plugin.tx_mb13headerslider.settings.bxsliderPause},
+				speed: {$plugin.tx_mb13headerslider.settings.bxsliderSpeed}
 				});
 		});
 	)
