@@ -16,13 +16,15 @@ plugin.tx_mb13headerslider {
 		includeJqueryBxsliderJs = 1
 		# cat=plugin.tx_mb13headerslider/enable/006; type=boolean; label=Include the predefined inline JS to activate '.boxslider'
 		includeInlineBxsliderJs = 1
+		# cat=plugin.tx_mb13headerslider/enable/007; type=boolean; label=Include cssInline as page.headerData.55 
+		includeHeaderData = 1
 
 		# cat=plugin.tx_mb13headerslider/image/001; type=integer; label=Width of the background image that serves as stage
 		width = 766
 		# cat=plugin.tx_mb13headerslider/image/002; type=integer; label=Heigth of the background image that serves as stage 
 		height = 256
 		# cat=plugin.tx_mb13headerslider/image/003; type=integer; label=Color of the background image that serves as stage
-		backColor = #f0f0f0
+		backColor = #ffffff
 		# cat=plugin.tx_mb13headerslider/image/004; type=string; label=Default image to be shown if none is given in the media field of the pages.
 		defaultHeaderPic = fileadmin/v4/img/defaultHeaderPic.jpg
 

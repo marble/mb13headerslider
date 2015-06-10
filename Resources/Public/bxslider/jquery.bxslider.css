@@ -209,3 +209,10 @@
 	margin: 0;
 	padding: 0;
 }
+.bxslider li {
+	list-style-type: none;
+}
+
+.css_display_none {
+	display:none;
+}

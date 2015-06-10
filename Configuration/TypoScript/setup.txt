@@ -63,7 +63,7 @@ lib.tx_mb13headerslider.stdWrap.override.cObject {
 			params.cObject = TEXT
 			params.cObject {
 				value = style="display:none"
-				value = style=""
+				value = class="css_display_none"
 				if.value = 0
 				if.isGreaterThan.data = register:FILE_NUM_CURRENT
 			}
@@ -81,6 +81,20 @@ page.includeCSS {
 	mb13bxslider = EXT:mb13headerslider/Resources/Public/bxslider/jquery.bxslider.css
 	mb13bxslider.if.isTrue = {$plugin.tx_mb13headerslider.settings.includeJqueryBxsliderCss}
 }
+
+
+page.headerData.55.if.isTrue = {$plugin.tx_mb13headerslider.settings.includeHeaderData}
+page.headerData.55 = TEXT
+page.headerData.55.value (
+<style type="text/css">
+/*<![CDATA[*/
+<!--
+.css_display_none {display:none}
+-->
+/*]]>*/
+</style>
+)
+
 
 page.includeJSFooterlibs {
 	mb13jquery = //ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js
